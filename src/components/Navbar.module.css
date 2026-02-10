@@ -1,0 +1,194 @@
+/* src/components/Navbar.module.css */
+
+/* --- ESTRUCTURA PRINCIPAL --- */
+.navWrapper {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Estilos base de las islas */
+.pillContainer, .navPill, .rightPillContainer {
+  background-color: #9e1616;
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+/* ISLA 1: LOGO */
+.pillContainer {
+  padding: 0 1.5rem;
+  /* Transición suave para el hover del logo */
+  transition: transform 0.2s; 
+}
+.pillContainer:hover {
+  transform: scale(1.05); /* Efecto sutil al pasar el mouse por el logo */
+}
+
+/* NUEVO: Enlace del logo para quitar subrayado */
+.logoLink {
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ISLA 2: MENÚ CENTRAL (Desktop) */
+.navPill {
+  padding: 0 2rem;
+  list-style: none;
+  display: flex; /* Aseguramos flex aquí */
+  gap: 1.5rem;
+}
+.navPill a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+  opacity: 0.8; /* Un poco transparente por defecto */
+}
+.navPill a:hover { 
+  color: #fff;
+  opacity: 1; /* Blanco puro al hover */
+  text-shadow: 0 0 10px rgba(255,255,255,0.5); /* Brillito */
+}
+
+/* ISLA 3: DERECHA (Botón + Hamburguesa) */
+.rightPillContainer {
+  padding: 0 0.5rem;
+  gap: 0.5rem;
+}
+
+.ctaPill {
+  background-color: #bf1616; /* Un rojo un poco más claro para diferenciar */
+  color: #ffffff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  transition: background 0.3s;
+}
+
+.ctaPill:hover {
+  background-color: #ff3333; /* Rojo brillante al hover */
+}
+
+/* EL BOTÓN HAMBURGUESA */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- MENÚ MÓVIL (Overlay) --- */
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #050505; /* CAMBIO: Fondo negro casi total para contraste */
+  z-index: 90;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: all 0.3s ease-in-out;
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobileLinks {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Más espacio entre links */
+}
+
+.mobileLinks a {
+  color: #888; /* Color base gris */
+  font-size: 2rem; /* Texto grande */
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s; /* Transición rápida */
+}
+
+/* --- FEEDBACK VISUAL EN MÓVIL (Lo que pediste) --- */
+.mobileLinks a:hover,
+.mobileLinks a:active { /* :active es cuando lo tocas con el dedo */
+  color: #9e1616; /* Se pone rojo */
+  transform: scale(1.1); /* Crece un poco */
+}
+
+/* Estilo especial para el botón de contacto en el menú móvil */
+.mobileCta {
+  color: #fff !important;
+  font-size: 1.5rem !important;
+  border: 1px solid #333;
+  padding: 10px 30px;
+  border-radius: 50px;
+}
+.mobileCta:hover, 
+.mobileCta:active {
+  background-color: #9e1616;
+  border-color: #9e1616;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .navPill {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  
+  .rightPillContainer {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .ctaPill {
+    display: none; /* En pantallas muy pequeñas ocultamos el botón de contacto del navbar */
+  }
+}

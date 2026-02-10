@@ -1,0 +1,111 @@
+.section {
+    background-color: #470808; /* Casi negro, para seguir el tono dark */
+    padding: 6rem 2rem;
+    color: white;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 600px;
+  }
+  
+  .heading {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, #666);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Efecto de texto degradado */
+  }
+  
+  .subheading {
+    color: #888;
+    font-size: 1.1rem;
+  }
+  
+  /* --- LA GRILLA (BENTO) --- */
+  .grid {
+    display: grid;
+    /* Esto crea 3 columnas de igual ancho automáticamente */
+    grid-template-columns: repeat(3, 1fr); 
+    /* Espacio entre tarjetas */
+    gap: 1.5rem; 
+    max-width: 1000px;
+    width: 100%;
+  }
+  
+  /* --- LAS TARJETAS --- */
+ /* FeaturesGrid.module.css */
+
+/* FeaturesGrid.module.css - VERSIÓN DE ALTO RENDIMIENTO */
+
+.card {
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 250px;
+
+  /* OPTIMIZACIÓN CLAVE */
+  transition: transform 0.2s ease-out, border-color 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform; /* Prepara la GPU */
+  transform: translateZ(0); /* Hack para activar aceleración de hardware */
+}
+
+.card:hover {
+  transform: translateY(-4px); /* Movimiento más corto es más rápido */
+  border-color: #444;
+  /* Sombra más pequeña y opaca es más fácil de renderizar */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+}
+  
+  /* --- CLASES DE TAMAÑO --- */
+  /* Esta clase hace que una tarjeta ocupe 2 espacios de ancho */
+  .colSpan2 {
+    grid-column: span 2;
+  }
+  
+  /* --- CONTENIDO --- */
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+  
+  .card p {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.5;
+  }
+  
+  /* --- RESPONSIVE --- */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr; /* En móvil, todo a 1 sola columna */
+    }
+    
+    .colSpan2 {
+      grid-column: span 1; /* Pierden el poder de ocupar 2 espacios */
+    }
+    
+    .heading {
+      font-size: 2rem;
+    }
+  }

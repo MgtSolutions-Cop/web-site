@@ -1,0 +1,259 @@
+.contactSection {
+  background-color: #050505;
+  padding: 8rem 2rem;
+  color: white;
+  border-top: 1px solid #1a1a1a;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+/* --- COLUMNA IZQUIERDA (Info) --- */
+.label {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.redText {
+  color: #9e1616; /* Rojo corporativo */
+}
+
+.description {
+  color: #999;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 4rem;
+  max-width: 400px;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.detailItem h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio para el icono */
+}
+
+.detailItem p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* --- COLUMNA DERECHA (Formulario) --- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.inputGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 0.8rem;
+  transition: color 0.3s;
+}
+
+/* ESTILO DE LOS INPUTS */
+.inputGroup input,
+.inputGroup textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #333;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  border-radius: 0;
+  font-family: inherit;
+  transition: border-color 0.3s, color 0.3s;
+  width: 100%;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  outline: none;
+  border-bottom-color: #9e1616; /* ROJO */
+}
+
+.inputGroup:focus-within label {
+  color: #9e1616;
+}
+
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+  color: #333;
+}
+
+/* BOTÓN DE ENVIAR */
+.submitBtn {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 1.2rem 3rem;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: transform 0.2s, background-color 0.2s, color 0.2s;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  background-color: #9e1616; /* Rojo al hover */
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* MENSAJE DE ÉXITO */
+.successMessage {
+  background: #111;
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid #222;
+  text-align: center;
+}
+.successMessage h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #9e1616;
+}
+.resetBtn {
+  margin-top: 2rem;
+  background: transparent;
+  border: 1px solid #444;
+  color: #888;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* --- NUEVOS ESTILOS PARA EL SELECT PERSONALIZADO --- */
+
+/* Caja Principal (Trigger) */
+.customSelectTrigger {
+  position: relative;
+  border-bottom: 1px solid #333;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  color: white;
+  font-size: 1.1rem;
+  transition: border-color 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customSelectTrigger.open {
+  border-bottom-color: #9e1616; /* Se pone rojo al abrir */
+}
+
+.placeholderText {
+  color: #333; /* Color del placeholder si no hay nada seleccionado */
+}
+
+.arrowIcon {
+  font-size: 0.8rem;
+  color: #9e1616;
+  transition: transform 0.3s;
+}
+
+.customSelectTrigger.open .arrowIcon {
+  transform: rotate(180deg);
+}
+
+/* Lista Desplegable */
+.customOptionsList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #050505; /* Fondo oscuro igual al section */
+  border: 1px solid #333;
+  border-top: none;
+  z-index: 50;
+  max-height: 250px;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin-top: 5px;
+}
+
+/* Opción Individual */
+.customOption {
+  padding: 12px 15px;
+  cursor: pointer;
+  color: #ccc;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+/* --- AQUÍ ESTÁ LA MAGIA DEL ROJO --- */
+.customOption:hover {
+  background-color: #9e1616; /* ¡Rojo corporativo exacto! */
+  color: white;
+}
+
+.customOption.selected {
+  background-color: #1a1a1a;
+  color: #9e1616;
+  font-weight: 700;
+  border-left: 3px solid #9e1616;
+}
+.spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .submitBtn {
+    width: 100%;
+  }
+}

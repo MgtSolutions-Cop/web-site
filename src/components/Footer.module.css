@@ -1,0 +1,204 @@
+.footer {
+    background-color: #050505; /* Casi negro, muy elegante */
+    color: #ffffff;
+    padding: 5rem 2rem 2rem 2rem;
+    border-top: 1px solid #1a1a1a; /* Línea sutil arriba */
+    font-family: inherit; /* Hereda la Montserrat que pusimos */
+  }
+  
+  /* --- SECCIÓN CTA SUPERIOR --- */
+  .ctaSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .ctaTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .ctaText {
+    color: #888;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .ctaButton {
+    background-color: #f70808; /* Tu rojo corporativo */
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  
+  .ctaButton:hover {
+    background-color: #d00000;
+    transform: translateY(-2px);
+  }
+  
+  .separator {
+    width: 100%;
+    height: 1px;
+    background-color: #222;
+    margin-bottom: 4rem;
+  }
+  
+  /* --- GRID DE COLUMNAS --- */
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* La primera col es doble de ancha */
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* COLUMNA MARCA */
+  .logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+  }
+  
+  .mission {
+    color: #888;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    max-width: 300px;
+  }
+  
+  .socials {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .socialIcon {
+    color: #666;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .socialIcon:hover {
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  
+  /* COLUMNAS LINKS */
+  .colTitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .linkList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .linkList a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 0.95rem;
+    transition: color 0.2s, padding-left 0.2s;
+  }
+  
+  .linkList a:hover {
+    color: #f70808; /* Rojo al pasar el mouse */
+    padding-left: 5px; /* Pequeño movimiento a la derecha */
+  }
+  
+  /* COLUMNA CONTACTO */
+  .contactCol p {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+  }
+  
+  .emailLink {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
+  
+  .emailLink:hover {
+    border-color: #f70808;
+  }
+  
+  /* --- BARRA INFERIOR --- */
+  .bottomBar {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #111;
+    display: flex;
+    justify-content: space-between;
+    color: #444;
+    font-size: 0.85rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .legalLinks {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .legalLinks a {
+    color: #444;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .legalLinks a:hover {
+    color: #888;
+  }
+  
+  /* --- RESPONSIVE --- */
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr 1fr; /* 2 columnas en tablets */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr; /* 1 columna en móvil */
+      gap: 2rem;
+      text-align: center;
+    }
+    
+    .socials, .contactCol {
+      justify-content: center;
+    }
+    
+    .bottomBar {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+    
+    .mission {
+      margin: 0 auto 1.5rem auto;
+    }
+  
+    .ctaTitle {
+      font-size: 2rem;
+    }
+  }

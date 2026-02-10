@@ -1,0 +1,250 @@
+.mainContainer {
+    background-color: #050505;
+    color: white;
+    min-height: 100vh;
+    padding-top: 80px;
+  }
+  
+  /* --- HERO --- */
+  .hero {
+    padding: 8rem 2rem 6rem 2rem;
+    text-align: center;
+    background: radial-gradient(circle at top, #1a0505 0%, #050505 60%);
+    border-bottom: 1px solid #1a1a1a;
+  }
+  
+  .heroContent {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .label {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: #666;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+  
+  .title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  
+  .redText { color: #9e1616; }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* --- HISTORIA (Grid) --- */
+  .storySection {
+    padding: 6rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .storyGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .storyText h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: white;
+  }
+  
+  .storyText p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #aaa;
+    margin-bottom: 1.5rem;
+  }
+  
+  .storyText strong { color: white; }
+  
+  /* Parte Visual (Estadísticas) */
+  .storyVisual {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .statCard {
+    background: #0a0a0a;
+    border: 1px solid #222;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    width: 180px;
+    z-index: 2;
+    transition: transform 0.3s;
+  }
+  
+  .statCard:hover {
+    border-color: #9e1616;
+    transform: translateY(-5px);
+  }
+  
+  .statIcon {
+    font-size: 2rem;
+    color: #9e1616;
+    margin-bottom: 1rem;
+  }
+  
+  .statNumber {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    color: white;
+  }
+  
+  .statLabel {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+    display: block;
+  }
+  
+  /* --- VALORES --- */
+  .valuesSection {
+    background-color: #080808;
+    padding: 6rem 2rem;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  
+  .sectionTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+  }
+  
+  .valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .valueCard {
+    background: #050505;
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid #1a1a1a;
+    transition: all 0.3s;
+  }
+  
+  .valueCard:hover {
+    border-color: #333;
+  }
+  
+  .valueIcon {
+    font-size: 2.5rem;
+    color: #9e1616;
+    margin-bottom: 1.5rem;
+  }
+  
+  .valueCard h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .valueCard p {
+    color: #999;
+    line-height: 1.6;
+  }
+  
+  /* --- TEAM --- */
+  .teamSection {
+    padding: 6rem 2rem;
+    text-align: center;
+  }
+  
+  .teamHeader { margin-bottom: 4rem; }
+  .teamHeader h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .teamHeader p { color: #888; }
+  
+  .teamGrid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  
+  .teamMember {
+    width: 250px;
+  }
+  
+  .avatarPlaceholder {
+    width: 120px;
+    height: 120px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #9e1616;
+  }
+  
+  .teamMember h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+  .teamMember p { font-size: 0.9rem; color: #666; }
+  
+  /* --- CTA --- */
+  .ctaSection {
+    padding: 6rem 2rem;
+    background: linear-gradient(to right, #050505, #0f0000);
+    text-align: center;
+  }
+  
+  .ctaContent h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+  .ctaContent p { color: #aaa; margin-bottom: 2rem; font-size: 1.2rem; }
+  
+  .ctaButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #9e1616;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .ctaButton:hover {
+    background: #cc1f1f;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { padding-top: 6rem; }
+    .title { font-size: 2.5rem; }
+    .storyGrid { grid-template-columns: 1fr; }
+    .storyVisual { flex-direction: column; align-items: center; }
+    .statCard { width: 100%; max-width: 300px; }
+  }

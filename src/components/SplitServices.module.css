@@ -1,0 +1,179 @@
+/* Contenedor Principal */
+.heroContainer {
+  display: flex;
+  width: 100%;
+  height: 85vh; /* Altura cómoda */
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* --- LÓGICA DEL SPLIT --- */
+.split {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Transición rápida para evitar lag */
+  transition: flex 0.4s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease;
+  cursor: pointer;
+  
+  /* Asegura que el texto esté encima del icono de fondo */
+  z-index: 1;
+}
+
+/* Colores Base Minimalistas */
+.splitLeft {
+  background-color: #0a0a0a; /* Negro muy oscuro */
+  border-right: 1px solid #222; /* Línea sutil divisoria */
+}
+
+.splitRight {
+  background-color: #111111; /* Un gris apenas más claro para diferenciar */
+}
+
+/* --- MARCA DE AGUA (EL LOGO GIGANTE) --- */
+.watermarkIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrado perfecto */
+  width: 60%; /* Tamaño gigante */
+  max-width: 400px;
+  color: #fff;
+  opacity: 0.03; /* ¡CLAVE! Muy transparente, apenas visible */
+  z-index: -1; /* Detrás del texto */
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+/* --- CONTENIDO (TEXTO) --- */
+/* Ya no es una tarjeta, es texto flotante limpio */
+.contentCard {
+  padding: 3rem;
+  max-width: 480px;
+  color: white;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.subtitle {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #666; /* Gris medio */
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #999; /* Texto gris suave */
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+/* --- BOTÓN --- */
+.linkGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.iconCircle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1); /* Círculo sutil */
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+/* --- INTERACCIONES (HOVER) --- */
+
+/* 1. Al pasar el mouse, el lado crece */
+.split:hover {
+  flex: 1.5;
+  /* CAMBIO DE COLOR: Se vuelve rojo oscuro elegante */
+  background-color: #380404; /* Un rojo vino muy oscuro */
+}
+
+/* 2. El icono de fondo crece y se vuelve un poco más visible */
+.split:hover .watermarkIcon {
+  transform: translate(-50%, -50%) scale(1.1) ;
+  opacity: 0.1; /* Se nota un poco más */
+  color: #ff3333; /* Se tiñe de rojo */
+}
+
+/* 3. El texto se ilumina */
+.split:hover .subtitle { color: #ff9999; }
+.split:hover .description { color: #ddd; }
+
+/* 4. El botón reacciona */
+.split:hover .iconCircle {
+  background: #fff;
+  color: #990000;
+  border-color: #fff;
+  transform: translateX(10px);
+}
+
+/* --- LADO INACTIVO (FOCUS MODE) --- */
+.heroContainer:hover .split:not(:hover) {
+  flex: 0.8;
+  opacity: 0.4; /* Se apaga lo que no estás mirando */
+  filter: grayscale(100%); /* Se pone gris */
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .heroContainer {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .split {
+    padding: 4rem 1rem;
+    min-height: 50vh;
+    border-right: none;
+    border-bottom: 1px solid #222;
+  }
+
+  .watermarkIcon {
+    width: 80%; /* Más grande en móvil */
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  /* Desactivar efecto acordeón en móvil */
+  .heroContainer:hover .split:not(:hover) {
+    flex: 1;
+    opacity: 1;
+    filter: none;
+  }
+  .split:hover {
+    flex: 1;
+  }
+}

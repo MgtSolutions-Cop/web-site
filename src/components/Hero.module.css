@@ -1,0 +1,85 @@
+/* Hero.module.css */
+
+.heroContainer {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* IMPORTANTE: Para contener el fondo absoluto */
+    overflow: hidden;
+    /* background-color: #ffffff;  <-- BORRA O COMENTA ESTA LÍNEA */
+    background-color: #000; /* Pon un fondo negro base por si tarda en cargar el efecto */
+ 
+  }
+  
+  /* NUEVO: El contenedor para el efecto LightPillar */
+  .backgroundWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Al fondo */
+    opacity: 0.8; /* Opcional: si quieres que sea un poco más sutil */
+  }
+  
+  /* Aseguramos que el texto esté sobre el fondo */
+  .contentWrapper {
+    max-width: 900px;
+    position: relative; /* Para que z-index funcione */
+    z-index: 10;        /* Encima del fondo */
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  /* --- AJUSTE DE COLORES DE TEXTO --- */
+  /* Como el fondo ahora es oscuro con luces rojas, necesitamos texto claro */
+  
+  .mainTitle {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    color: #ffffff; /* Texto blanco */
+  }
+  
+  .highlight {
+    color: #f70808; /* Usamos el mismo rojo intenso del pilar */
+    text-shadow: 0 0 20px rgba(247, 8, 8, 0.5); /* Un pequeño resplandor rojo */
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    color: #e0e0e0; /* Gris muy claro */
+    font-weight: 500;
+    margin-bottom: 3rem;
+  }
+  
+  /* Botón blanco para que resalte */
+  .primaryButton {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  
+  .primaryButton:hover {
+    transform: scale(1.05);
+    background-color: #bf1616; /* Al pasar el mouse, se vuelve rojo */
+    color: white;
+  }
+  
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .mainTitle { font-size: 3rem; }
+    .subtitle { font-size: 1.1rem; }
+    
+  }
